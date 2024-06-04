@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страничка Сергея Ивина</title>
+    <style>
+        body {
+            margin: 50px 80px;
+            background: url('fon.jpg') no-repeat fixed;
+            background-size: cover;
+            background-color: burlywood;
+            color: #006400;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: #008080;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <h2>Вторая страничка Ивина Сергея</h2>
+    
+    <p>
+        Всем привет!<br>
+        Мы изучили структуру и форматирование HTML-документа!<br>
+        Эта страничка создана в кодировке UTF-8 и отформатирована следующим образом:<br>
+        .............
+    </p>
+
+    <button onclick="changeBackgroundColor()">Изменить цвет фона</button>
+
+    <script>
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = getRandomColor();
+        }
+
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#64FE2E';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+    </script>
+</body>
+</html>

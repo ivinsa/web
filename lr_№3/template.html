@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Страничка Ивана Иванова</title>
+<style>
+    body {
+        margin: 0;
+        overflow: hidden;
+    }
+    #runningText {
+        position: absolute;
+        font-size: 24px;
+        white-space: nowrap;
+        color: red;
+    }
+</style>
+</head>
+<body>
+<div id="runningText">HELLO!</div>
+<script>
+    var runningText = document.getElementById('runningText');
+    var x = 0;
+    var y = 0;
+    var dx = 1;
+    var dy = 1;
+    var textWidth = runningText.offsetWidth;
+    var textHeight = runningText.offsetHeight;
+    
+    function moveText() {
+        x += dx;
+        y += dy;
+        runningText.style.left = x + 'px';
+        runningText.style.top = y + 'px';
+        
+        var windowWidth = window.innerWidth;
+        var windowHeight = window.innerHeight;
+        
+        if (x + textWidth >= windowWidth || x <= 0) {
+            dx = -dx;
+        }
+        
+        if (y + textHeight >= windowHeight || y <= 0) {
+            dy = -dy;
+        }
+        
+        requestAnimationFrame(moveText);
+    }
+    
+    moveText();
+</script>
+</body>
+</html>
